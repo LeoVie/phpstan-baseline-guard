@@ -11,6 +11,12 @@ in your existing (legacy) code first.
 You typically do not want to add more errors to you baseline, once generated.
 `phpstan-baseline-guard` is a small tool to make sure, you do not do that.
 
+## Installation
+Install via Composer
+```bash
+composer require --dev leovie/phpstan-baseline-guard
+```
+
 ## Usage
 Given, you have generated a PHPStan baseline file `/foo/baseline.neon`
 
