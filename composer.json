@@ -32,6 +32,9 @@
             "Leovie\\PhpstanBaselineGuard\\Tests\\": "tests/"
         }
     },
+    "bin": [
+        "phpstan-baseline-guard"
+    ],
     "config": {
         "allow-plugins": {
             "infection/extension-installer": true,
