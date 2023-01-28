@@ -33,18 +33,16 @@ jobs:
           tools: composer:v2.5
           extensions: ctype, iconv, mbstring
       - name: "Install requirements"
-        run: |
-          composer install --no-interaction
+        run: composer install --no-interaction
+      - name: "Composer normalize dry run"
+        run: composer normalize --dry-run
       - name: "Static Analysis"
         run: |
           composer phpstan
           composer psalm
       - name: "Unit Testing"
-        run: |
-          composer test:unit
+        run: composer test:unit
       - name: "Mutation Testing"
-        run: |
-          composer infection
+        run: composer infection
       - name: "Functional Testing"
-        run: |
-          composer test:functional
+        run: composer test:functional
