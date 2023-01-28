@@ -17,6 +17,7 @@ class NeonDecoderTest extends TestCase
 
     public function decodeFileProvider(): array
     {
+        $s = DIRECTORY_SEPARATOR;
         return [
             'empty' => [
                 'expected' => [
@@ -24,7 +25,7 @@ class NeonDecoderTest extends TestCase
                         'ignoreErrors' => null,
                     ],
                 ],
-                'path' => __DIR__ . '/../../_testdata/baseline/empty.neon'
+                'path' => __DIR__ . "${s}..${s}..${s}_testdata${s}baseline${s}empty.neon"
             ],
             'non empty' => [
                 'expected' => [
@@ -43,7 +44,7 @@ class NeonDecoderTest extends TestCase
                         ],
                     ],
                 ],
-                'path' => __DIR__ . '/../../_testdata/baseline/non_empty.neon'
+                'path' => __DIR__ . "${s}..${s}..${s}_testdata${s}baseline${s}non_empty.neon"
             ],
         ];
     }

@@ -13,11 +13,11 @@ use Leovie\PhpstanBaselineGuard\Result\NoMaxIgnoredErrorsGivenResult;
 use Leovie\PhpstanBaselineGuard\Result\TooManyIgnoredErrorsResult;
 
 /** @phpstan-import-type Baseline from BaselineParser */
-readonly class BaselineGuardService
+class BaselineGuardService
 {
     public function __construct(
-        private NeonDecoder    $neonDecoder,
-        private BaselineParser $baselineParser,
+        private readonly NeonDecoder    $neonDecoder,
+        private readonly BaselineParser $baselineParser,
     ) {}
 
     public function guard(string $baselinePath, ?int $maxIgnoredErrors): BaselineGuardResult
