@@ -1,0 +1,13 @@
+{
+    "source": {
+        "directories": [
+            "src"
+        ]
+    },
+    "mutators": {
+        "@default": true
+    },
+    "logs": {
+        "html": "build/logs/infection.html"
+    }
+}

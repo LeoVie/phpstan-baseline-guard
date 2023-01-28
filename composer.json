@@ -1,0 +1,57 @@
+{
+    "name": "leovie/phpstan-baseline-guard",
+    "description": "Prevent your phpstan baseline from growing",
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Leo Viezens",
+            "email": "leo.viezens@web.de"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "nette/neon": "^3.4",
+        "symfony/console": "^6.2",
+        "thecodingmachine/safe": "^2.4"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.29",
+        "infection/infection": "^0.26.18",
+        "phpstan/phpstan": "^1.9",
+        "phpunit/phpunit": "^9.5",
+        "psalm/plugin-phpunit": "^0.18.4",
+        "vimeo/psalm": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Leovie\\PhpstanBaselineGuard\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Leovie\\PhpstanBaselineGuard\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "infection/extension-installer": true,
+            "ergebnis/composer-normalize": true
+        }
+    },
+    "scripts": {
+        "infection": "XDEBUG_MODE=coverage infection --threads=max --only-covered --min-msi=100 --min-covered-msi=100 --test-framework-options='--testsuite=Unit'",
+        "infection-ci": "infection --no-progress --coverage=./build/coverage/ --threads=max --only-covered --min-msi=100 --min-covered-msi=100 --test-framework-options='--testsuite=Unit --no-coverage'",
+        "phpstan": "phpstan",
+        "psalm": "psalm --no-progress --no-cache",
+        "test": [
+            "@phpstan",
+            "@psalm",
+            "@test:unit",
+            "@infection-ci",
+            "@test:functional"
+        ],
+        "test:functional": "phpunit --testsuite=Functional --no-coverage",
+        "test:unit": "XDEBUG_MODE=coverage phpunit --testsuite=Unit"
+    }
+}
