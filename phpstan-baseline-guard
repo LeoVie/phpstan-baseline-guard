@@ -49,7 +49,7 @@ ERROR
     }
 })();
 
-$application = new Application('phpstan-baseline-guard', '1.0.0');
+$application = new Application('phpstan-baseline-guard');
 $command = new PhpstanBaselineGuardCommand(
     new BaselineGuardService(
         new NeonDecoder(),
