@@ -3,6 +3,9 @@
     "description": "Prevent your phpstan baseline from growing",
     "license": "MIT",
     "type": "library",
+    "keywords": [
+        "dev"
+    ],
     "authors": [
         {
             "name": "Leo Viezens",
