@@ -43,6 +43,7 @@
         "phpstan": "phpstan",
         "psalm": "psalm --no-progress --no-cache",
         "test": [
+            "composer normalize --dry-run",
             "@phpstan",
             "@psalm",
             "@test:unit",
