@@ -51,7 +51,8 @@ class PhpstanBaselineGuardCommandTest extends TestCase
 
     public function commandProvider(): array
     {
-        $baselinePath = __DIR__ . '/../../_testdata/baseline/non_empty.neon';
+        $s = DIRECTORY_SEPARATOR;
+        $baselinePath = __DIR__ . "${s}..${s}..${s}_testdata${s}baseline${s}non_empty.neon";
 
         return [
             'NoMaxIgnoredErrorsGiven' => [

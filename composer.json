@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=8.2",
+        "php": ">=8.1",
         "nette/neon": "^3.4",
         "symfony/console": "^6.2",
         "thecodingmachine/safe": "^2.4"
@@ -40,18 +40,17 @@
         }
     },
     "scripts": {
-        "infection": "XDEBUG_MODE=coverage infection --threads=max --only-covered --min-msi=100 --min-covered-msi=100 --test-framework-options='--testsuite=Unit'",
-        "infection-ci": "infection --no-progress --coverage=./build/coverage/ --threads=max --only-covered --min-msi=100 --min-covered-msi=100 --test-framework-options='--testsuite=Unit --no-coverage'",
+        "infection": "infection --threads=max --only-covered",
         "phpstan": "phpstan",
         "psalm": "psalm --no-progress --no-cache",
         "test": [
             "@phpstan",
             "@psalm",
             "@test:unit",
-            "@infection-ci",
+            "@infection",
             "@test:functional"
         ],
         "test:functional": "phpunit --testsuite=Functional --no-coverage",
-        "test:unit": "XDEBUG_MODE=coverage phpunit --testsuite=Unit"
+        "test:unit": "phpunit --testsuite=Unit"
     }
 }

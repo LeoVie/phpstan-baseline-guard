@@ -2,10 +2,10 @@
 
 namespace Leovie\PhpstanBaselineGuard\Result;
 
-readonly class TooManyIgnoredErrorsResult implements BaselineGuardResult
+class TooManyIgnoredErrorsResult implements BaselineGuardResult
 {
     public function __construct(
-        private int $countOfIgnoredErrors
+        private readonly int $countOfIgnoredErrors
     ) {}
 
     public function getCountOfIgnoredErrors(): int

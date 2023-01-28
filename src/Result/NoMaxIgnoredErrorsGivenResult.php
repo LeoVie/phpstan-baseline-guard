@@ -2,10 +2,10 @@
 
 namespace Leovie\PhpstanBaselineGuard\Result;
 
-readonly class NoMaxIgnoredErrorsGivenResult implements BaselineGuardResult
+class NoMaxIgnoredErrorsGivenResult implements BaselineGuardResult
 {
     public function __construct(
-        private int $countOfIgnoredErrors
+        private readonly int $countOfIgnoredErrors
     ) {}
 
     public function getCountOfIgnoredErrors(): int
