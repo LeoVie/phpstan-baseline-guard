@@ -2,7 +2,7 @@
     "name": "leovie/phpstan-baseline-guard",
     "description": "Prevent your phpstan baseline from growing",
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Leo Viezens",
