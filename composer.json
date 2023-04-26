@@ -45,7 +45,7 @@
         }
     },
     "scripts": {
-        "build-phar": "curl -JL -o phar-composer.phar https://clue.engineering/phar-composer-latest.phar && composer install --no-dev && php phar-composer.phar build . ./build/artifacts/clover-crap-check.phar && composer install",
+        "build-phar": "curl -JL -o phar-composer.phar https://clue.engineering/phar-composer-latest.phar && composer install --no-dev && php phar-composer.phar build . ./build/artifacts/phpstan-baseline-guard.phar && composer install",
         "infection": "infection --threads=max --only-covered",
         "phpstan": "phpstan",
         "psalm": "psalm --no-progress --no-cache",
